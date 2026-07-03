@@ -1,0 +1,103 @@
+[build-system]
+requires = ["setuptools>=69.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "quantaforge"
+version = "0.1.0"
+description = "A next-generation Python framework for intelligent pipelines, asynchronous execution, caching, validation, and extensible plugin architecture."
+readme = "README.md"
+requires-python = ">=3.10"
+
+license = { text = "Sayanox License 1.1" }
+
+authors = [
+    { name = "Sayan" }
+]
+
+keywords = [
+    "python",
+    "framework",
+    "pipeline",
+    "async",
+    "cache",
+    "validation",
+    "plugins",
+    "automation",
+    "developer-tools",
+    "high-performance"
+]
+
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Operating System :: OS Independent",
+    "Typing :: Typed"
+]
+
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/sayan9168/quantaforge"
+Repository = "https://github.com/sayan9168/quantaforge"
+Issues = "https://github.com/sayan9168/quantaforge/issues"
+License = "https://github.com/sayan9168/sayanox-license"
+
+[project.optional-dependencies]
+dev = [
+    "black>=24.0",
+    "ruff>=0.5.0",
+    "mypy>=1.10.0",
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.23.0",
+    "coverage>=7.0.0"
+]
+
+docs = [
+    "mkdocs>=1.6",
+    "mkdocs-material>=9.5"
+]
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["quantaforge*"]
+
+[tool.black]
+line-length = 88
+target-version = ["py310"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py310"
+
+[tool.ruff.lint]
+select = [
+    "E",
+    "F",
+    "I",
+    "UP",
+    "B",
+    "N"
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+
+[tool.coverage.run]
+branch = true
+source = ["quantaforge"]
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+check_untyped_defs = true
